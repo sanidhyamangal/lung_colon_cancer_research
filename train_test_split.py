@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+author = Sanidhya Mangal
+github = sanidhyamangal
+revision = 07-19-2020
+"""
 from pathlib import Path
 import random
 import os
