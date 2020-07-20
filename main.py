@@ -15,10 +15,10 @@ def train_model(namescope:str, dense_units:int) -> None:
     )
 
     train_data = image_data.flow_from_directory(f'{namescope}_train/', target_size=(150, 150), batch_size=32, color_mode='rgb')
-    val_data = image_data.flow_from_directory(f'{namescope}_test/', target_size=(150, 150), batch_size=32,color_mode='rgb')
+    val_data = image_data.flow_from_directory(f'{namescope}_test/', target_size=(150, 150), batch_size=32, color_mode='rgb')
 
     model = tf.keras.models.Sequential([
-        tf.keras.layers.Conv2D(32, 3, padding='same', activation='relu', input_shape=(150, 150 ,1)),
+        tf.keras.layers.Conv2D(32, 3, padding='same', activation='relu', input_shape=(150, 150 ,3)),
         tf.keras.layers.MaxPooling2D(),
         tf.keras.layers.Conv2D(64, 3, padding='same', activation='relu'),
         tf.keras.layers.MaxPooling2D(),
@@ -26,7 +26,6 @@ def train_model(namescope:str, dense_units:int) -> None:
         tf.keras.layers.MaxPooling2D(),
         tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(512, activation='relu'),
-        tf.keras.layers.Dropout(rate=0.4),
         tf.keras.layers.Dense(dense_units)
     ])
 
@@ -42,3 +41,5 @@ def train_model(namescope:str, dense_units:int) -> None:
 
     print(f"saving model for {namescope}")
     model.save(f'{namescope}.h5')
+
+train_model(namescope="colon", dense_units=2)
