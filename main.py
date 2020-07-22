@@ -26,6 +26,7 @@ def train_model(namescope:str, dense_units:int) -> None:
         tf.keras.layers.MaxPooling2D(),
         tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(512, activation='relu'),
+        tf.keras.layers.Dropout(rate=0.4),
         tf.keras.layers.Dense(dense_units)
     ])
 
@@ -42,4 +43,4 @@ def train_model(namescope:str, dense_units:int) -> None:
     print(f"saving model for {namescope}")
     model.save(f'{namescope}.h5')
 
-train_model(namescope="colon", dense_units=2)
+train_model(namescope="lung", dense_units=3)

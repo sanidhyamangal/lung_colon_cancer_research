@@ -3,3 +3,10 @@
 
 #### 20-07-2020
 - Added script for training the models
+
+### 21-07-2020
+- Added tensorboard files and trained model for colon
+
+### 22-07-2020
+- Added tensorboard files and trained model for colon with dropout
+- updated the main file for the lung namescope.
