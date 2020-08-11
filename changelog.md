@@ -14,3 +14,6 @@
 ### 23-07-2020
 - Added tensorboard files and trained model for lungs
 
+### 11-08-2020
+- removed files and model for colon
+- renamed colon_dropout files and model to colon
