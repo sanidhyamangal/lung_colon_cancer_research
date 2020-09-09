@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-author = Sanidhya Mangal
-github = sanidhyamangal
+author = Ravinder Singh
 revision = 07-19-2020
 """
 from pathlib import Path
